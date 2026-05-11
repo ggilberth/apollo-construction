@@ -19,14 +19,14 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3 text-white">
           <Image
-            src="/apollo-logo.png"
+            src="/apollo-wordmark.svg"
             alt="Apollo Construction & Groundworks logo"
-            width={44}
-            height={44}
-            className="h-11 w-11 object-contain"
+            width={300}
+            height={80}
+            className="h-12 w-auto object-contain"
             priority
           />
-          <span className="text-xl font-black uppercase tracking-wide">Apollo Construction & Groundworks</span>
+          <span className="text-xl font-black uppercase tracking-wide">Construction & Groundworks</span>
         </Link>
         <nav className="flex items-center gap-5 text-sm font-semibold uppercase tracking-wide text-slate-200">
           {navLinks.map((link) => {
@@ -35,7 +35,7 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={isActive ? "text-accent-gold" : "hover:text-brand-100"}
+                className={isActive ? "text-accent-gold" : "hover:text-accent-gold"}
               >
                 {link.label}
               </Link>
