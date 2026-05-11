@@ -8,16 +8,16 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    title: "Residential Renovations",
-    bullets: ["Kitchen and bathroom remodels", "Basement finishing", "Structural modifications and framing"]
+    title: "Groundwork",
+    bullets: ["Patios", "Levelings", "Foundations."]
   },
   {
-    title: "Light Commercial Work",
-    bullets: ["Office and retail fit-outs", "Code compliance upgrades", "Phased scheduling for occupied spaces"]
+    title: "Fencing",
+    bullets: ["Fences", "Gates", "Railings."]
   },
   {
-    title: "Exterior Construction",
-    bullets: ["Deck and porch construction", "Siding and weatherproofing repairs", "Concrete and masonry touch-ups"]
+    title: "Driveways",
+    bullets: ["Driveways", "Parking Lots", "Concrete Work."]
   }
 ];
 
