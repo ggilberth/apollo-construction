@@ -30,13 +30,14 @@ export default function AboutPage() {
   return (
     <section className="mx-auto max-w-6xl bg-slate-50 px-6 py-16">
       <SectionTitle
+        as="h1"
         eyebrow="About us"
         title="A local construction partner built on trust."
         description="For over a decade, Apollo Construction & Groundworks has helped homeowners and business owners complete projects safely, on schedule, and to spec."
       />
 
       <div className="rounded border border-brand-100 bg-white p-8 shadow-sm">
-        <h3 className="text-2xl font-bold text-slate-900">Our Story</h3>
+        <h2 className="text-2xl font-bold text-slate-900">Our Story</h2>
         <p className="mt-4 text-slate-600">
           Apollo Construction & Groundworks Ltd was founded by Vinnie, who
           brings over 17 years of experience in groundworks, site development,
@@ -66,7 +67,7 @@ export default function AboutPage() {
             key={value.title}
             className="rounded border border-brand-100 bg-white p-6 shadow-sm"
           >
-            <h3 className="text-lg font-bold text-slate-900">{value.title}</h3>
+            <h2 className="text-lg font-bold text-slate-900">{value.title}</h2>
             <p className="mt-3 text-slate-600">{value.copy}</p>
           </article>
         ))}

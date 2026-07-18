@@ -21,6 +21,7 @@ export default function ServicesPage() {
   return (
     <section className="mx-auto max-w-6xl bg-slate-50 px-6 py-16">
       <SectionTitle
+        as="h1"
         eyebrow="Services"
         title="From renovation to rebuild, we cover the critical work."
         description="Every project starts with a clear scope and ends with a signed-off finish."
@@ -28,7 +29,7 @@ export default function ServicesPage() {
       <div className="grid gap-6 md:grid-cols-3">
         {services.map((service) => (
           <article key={service.title} className="rounded border border-brand-100 bg-white p-6 shadow-sm">
-            <h3 className="text-xl font-bold text-slate-900">{service.title}</h3>
+            <h2 className="text-xl font-bold text-slate-900">{service.title}</h2>
             <ul className="mt-4 space-y-2 text-slate-600">
               {service.bullets.map((bullet) => (
                 <li key={bullet}>- {bullet}</li>

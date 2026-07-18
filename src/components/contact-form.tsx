@@ -29,7 +29,7 @@ export function ContactForm() {
         className="rounded border border-green-300 bg-green-50 p-6 text-green-900 shadow-sm"
         role="status"
       >
-        <h3 className="text-xl font-bold">Thanks for your message!</h3>
+        <h2 className="text-xl font-bold">Thanks for your message!</h2>
         <p className="mt-2">
           Your enquiry has been sent. We’ll get back to you as soon as possible.
         </p>
@@ -44,9 +44,9 @@ export function ContactForm() {
       onSubmit={handleSubmit}
     >
       <div>
-        <h3 className="text-xl font-bold text-slate-900">
+        <h2 className="text-xl font-bold text-slate-900">
           Project inquiry form
-        </h3>
+        </h2>
         <p className="mt-1 text-sm text-slate-600">
           Fields marked <span aria-hidden="true">*</span> are required.
         </p>
