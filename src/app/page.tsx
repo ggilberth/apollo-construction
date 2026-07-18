@@ -39,8 +39,8 @@ export default function HomePage() {
   return (
     <div>
       <section className="bg-brand-900 text-white">
-        <div className="mx-auto grid max-w-7xl lg:grid-cols-[1.08fr_0.92fr]">
-          <div className="order-2 flex items-center px-6 py-10 sm:px-10 lg:order-1 lg:px-16 lg:py-16">
+        <div className="mx-auto grid max-w-6xl lg:grid-cols-2 lg:px-6">
+          <div className="order-2 flex items-center px-6 py-10 lg:order-1 lg:py-16 lg:pl-0 lg:pr-6">
             <div className="max-w-2xl">
               <p className="mb-4 text-sm font-bold uppercase tracking-[0.22em] text-accent-gold">
                 Built on reliability
@@ -84,7 +84,7 @@ export default function HomePage() {
               placeholder="blur"
               priority
               quality={80}
-              sizes="(min-width: 1024px) 46vw, 100vw"
+              sizes="(min-width: 1024px) 576px, 100vw"
               src="/projects/new-build-garden-makeover/new-build-garden-path-after.webp"
               style={{ objectPosition: "center 55%" }}
             />

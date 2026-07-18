@@ -24,7 +24,7 @@ export function SiteHeader() {
     }`;
 
   return (
-    <header className="border-b border-brand-700 bg-brand-900/95 backdrop-blur">
+    <header className="border-b border-white/10 bg-brand-900/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link
           aria-label="Apollo Construction & Groundworks home"
@@ -32,18 +32,15 @@ export function SiteHeader() {
           className="flex items-center gap-3 rounded-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-900"
         >
           <Image
-            src="/apollo-logo.png"
             alt=""
-            width={48}
-            height={48}
-            className="h-12 w-12 object-contain brightness-0 invert"
+            className="h-auto w-28 object-contain sm:w-32"
+            height={73}
             priority
+            src="/apollo-wordmark-white.png"
+            width={240}
           />
-          <span className="font-black uppercase tracking-wide sm:hidden">
-            Apollo
-          </span>
-          <span className="hidden text-base font-black uppercase tracking-wide sm:inline lg:text-xl">
-            Apollo Construction & Groundworks
+          <span className="hidden text-base font-black uppercase tracking-wide sm:inline lg:text-lg">
+            Construction &amp; Groundworks
           </span>
         </Link>
 

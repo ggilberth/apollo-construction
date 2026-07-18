@@ -21,7 +21,7 @@ const config: Config = {
           900: "#1E293B",
           700: "#334155",
           200: "#E2E8F0",
-          50: "#F8FAFC"
+          50: "#F7F5F0"
         },
         "accent-gold": "#D4A017"
       }
