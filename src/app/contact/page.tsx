@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
 import { SectionTitle } from "@/components/section-title";
-import { todo } from "node:test";
+import { businessDetails } from "@/config/business";
 
 export const metadata: Metadata = {
   title: "Contact | Apollo Construction & Groundworks",
   description: "Contact Apollo Construction & Groundworks to discuss your next construction or renovation project."
 };
 
-//@todo: add contact details here
 export default function ContactPage() {
   return (
     <section className="mx-auto max-w-6xl bg-slate-50 px-6 py-16">
@@ -22,13 +21,25 @@ export default function ContactPage() {
           <h3 className="text-xl font-bold text-slate-900">Contact details</h3>
           <div className="mt-4 space-y-3 text-slate-600">
             <p>
-              <strong>Phone:</strong> (555) 236-9184
+              <strong>Phone:</strong>{" "}
+              <a
+                className="font-medium text-brand-800 underline decoration-brand-200 underline-offset-4 hover:text-brand-700"
+                href={`tel:${businessDetails.phone.href}`}
+              >
+                {businessDetails.phone.display}
+              </a>
             </p>
             <p>
-              <strong>Email:</strong> hello@apolloconstruction.example
+              <strong>Email:</strong>{" "}
+              <a
+                className="font-medium text-brand-800 underline decoration-brand-200 underline-offset-4 hover:text-brand-700"
+                href={`mailto:${businessDetails.email}`}
+              >
+                {businessDetails.email}
+              </a>
             </p>
             <p>
-              <strong>Service area:</strong> Midlands and beyond
+              <strong>Service area:</strong> {businessDetails.serviceArea.full}
             </p>
           </div>
         </div>
