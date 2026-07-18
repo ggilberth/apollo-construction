@@ -11,7 +11,7 @@ const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/projects", label: "Projects" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" }
+  { href: "/contact", label: "Contact" },
 ];
 
 export function SiteHeader() {
@@ -34,9 +34,9 @@ export function SiteHeader() {
           <Image
             src="/apollo-logo.png"
             alt=""
-            width={44}
-            height={44}
-            className="h-11 w-11 object-contain"
+            width={48}
+            height={48}
+            className="h-12 w-12 object-contain brightness-0 invert"
             priority
           />
           <span className="font-black uppercase tracking-wide sm:hidden">

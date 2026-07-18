@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
 
 type ValidationErrors = React.ComponentProps<
@@ -109,11 +110,12 @@ export function ContactForm() {
       />
 
       <button
-        className="rounded bg-brand-800 px-5 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-brand-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex w-full items-center justify-center gap-2 rounded bg-brand-800 px-6 py-3.5 text-sm font-black uppercase tracking-wide text-white shadow-md transition hover:bg-brand-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
         disabled={state.submitting}
         type="submit"
       >
         {state.submitting ? "Sending…" : "Send inquiry"}
+        {!state.submitting ? <ArrowRight aria-hidden="true" size={17} /> : null}
       </button>
     </form>
   );

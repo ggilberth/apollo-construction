@@ -3,11 +3,7 @@
 import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
-type BackToTopProps = {
-  targetId: string;
-};
-
-export function BackToTop({ targetId }: BackToTopProps) {
+export function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -20,15 +16,13 @@ export function BackToTop({ targetId }: BackToTopProps) {
   }, []);
 
   const scrollToTop = () => {
-    const target = document.getElementById(targetId);
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
-    target?.focus({ preventScroll: true });
-    target?.scrollIntoView({
+    window.scrollTo({
       behavior: prefersReducedMotion ? "auto" : "smooth",
-      block: "start",
+      top: 0,
     });
   };
 

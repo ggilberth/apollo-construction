@@ -1,6 +1,7 @@
 export type ProjectImage = {
   src: string;
   alt: string;
+  position?: string;
 };
 
 export type BeforeAfter = {
@@ -28,6 +29,7 @@ export const projects: readonly Project[] = [
     cover: {
       src: "/projects/compass-patio-garden/compass-garden-path-pergola.webp",
       alt: "Finished brick path leading through the landscaped garden to a pergola",
+      position: "center 58%",
     },
     comparisons: [
       {
@@ -61,6 +63,7 @@ export const projects: readonly Project[] = [
     cover: {
       src: "/projects/formal-garden-path/formal-garden-path-after.webp",
       alt: "Completed straight garden path running between established hedges",
+      position: "center 52%",
     },
     comparisons: [
       {
@@ -90,6 +93,7 @@ export const projects: readonly Project[] = [
     cover: {
       src: "/projects/garden-border-wall/garden-border-wall-after.webp",
       alt: "Finished low retaining wall defining a planted garden border",
+      position: "center 58%",
     },
     comparisons: [
       {
@@ -114,6 +118,7 @@ export const projects: readonly Project[] = [
     cover: {
       src: "/projects/gravel-landscaping-pergola/gravel-garden-landscaping-after.webp",
       alt: "Landscaped back garden with gravel paths and a retained feature tree",
+      position: "center 58%",
     },
     comparisons: [
       {
@@ -143,6 +148,7 @@ export const projects: readonly Project[] = [
     cover: {
       src: "/projects/sunken-fire-pit/sunken-fire-pit-landscape.webp",
       alt: "Completed tiled sunken fire pit viewed across the surrounding patio",
+      position: "center 55%",
     },
     gallery: [],
   },
@@ -155,6 +161,7 @@ export const projects: readonly Project[] = [
     cover: {
       src: "/projects/new-build-garden-makeover/new-build-garden-overview-after.webp",
       alt: "Completed new-build garden with paved patio, lawn and curved gravel path",
+      position: "center 62%",
     },
     comparisons: [
       {

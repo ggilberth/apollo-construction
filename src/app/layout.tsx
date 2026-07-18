@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
   title: "Apollo Construction & Groundworks",
-  description: "Reliable construction and renovation experts for residential and light commercial projects.",
+  description: "Groundworks, site development, landscaping, paving and outdoor construction services for residential and commercial projects.",
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [
