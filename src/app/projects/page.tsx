@@ -6,13 +6,15 @@ import { BackToTop } from "@/components/back-to-top";
 import { ProjectIndex } from "@/components/project-index";
 import { SectionTitle } from "@/components/section-title";
 import { imageBlurDataURL } from "@/config/images";
+import { createPageMetadata } from "@/config/seo";
 import { projects, type ProjectImage } from "@/data/projects";
 
-export const metadata: Metadata = {
-  title: "Projects | Apollo Construction & Groundworks",
+export const metadata: Metadata = createPageMetadata({
+  title: "Projects",
   description:
     "Explore completed landscaping, paving, groundworks, paths, pergolas and garden transformations by Apollo Construction & Groundworks.",
-};
+  path: "/projects",
+});
 
 export default function ProjectsPage() {
   return (

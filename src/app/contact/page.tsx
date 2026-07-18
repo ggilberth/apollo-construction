@@ -3,13 +3,18 @@ import { Mail, MapPin, MessageSquareText, Phone, PhoneCall } from "lucide-react"
 import { ContactForm } from "@/components/contact-form";
 import { SectionTitle } from "@/components/section-title";
 import { businessDetails } from "@/config/business";
+import { createPageMetadata } from "@/config/seo";
 
-export const metadata: Metadata = {
-  title: "Contact | Apollo Construction & Groundworks",
-  description: "Contact Apollo Construction & Groundworks to discuss groundworks, site development, landscaping or outdoor construction."
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Contact",
+  description:
+    "Contact Apollo Construction & Groundworks to discuss groundworks, site development, landscaping or outdoor construction.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
+  const formId = process.env.FORMSPREE_FORM_ID;
+
   return (
     <div className="bg-slate-50">
       <section className="mx-auto max-w-6xl px-6 py-16">
@@ -88,7 +93,19 @@ export default function ContactPage() {
               </ol>
             </div>
           </div>
-          <ContactForm />
+          {formId ? (
+            <ContactForm formId={formId} />
+          ) : (
+            <div
+              className="rounded border border-amber-300 bg-amber-50 p-6 text-amber-950 shadow-sm"
+              role="status"
+            >
+              <h2 className="text-xl font-bold">Contact form unavailable</h2>
+              <p className="mt-2 leading-6">
+                Please call or email us using the contact details on this page.
+              </p>
+            </div>
+          )}
         </div>
       </section>
     </div>

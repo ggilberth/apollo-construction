@@ -18,8 +18,12 @@ type FieldProps = {
   type: "email" | "tel" | "text";
 };
 
-export function ContactForm() {
-  const [state, handleSubmit] = useForm("mzdokpzj");
+type ContactFormProps = {
+  formId: string;
+};
+
+export function ContactForm({ formId }: ContactFormProps) {
+  const [state, handleSubmit] = useForm(formId);
   const messageHasError = Boolean(
     state.errors?.getFieldErrors("message").length,
   );

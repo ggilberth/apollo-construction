@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
@@ -14,8 +15,14 @@ import {
 import { SectionTitle } from "@/components/section-title";
 import { businessDetails } from "@/config/business";
 import { imageBlurDataURL } from "@/config/images";
+import { createPageMetadata, siteDescription } from "@/config/seo";
 import { projects } from "@/data/projects";
 import { services } from "@/data/services";
+
+export const metadata: Metadata = createPageMetadata({
+  description: siteDescription,
+  path: "/",
+});
 
 const trustSignals = [
   { label: "Over 17 years of industry experience", icon: CheckCircle2 },

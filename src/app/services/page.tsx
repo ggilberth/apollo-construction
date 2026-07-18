@@ -4,13 +4,15 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { SectionTitle } from "@/components/section-title";
 import { imageBlurDataURL } from "@/config/images";
+import { createPageMetadata } from "@/config/seo";
 import { services } from "@/data/services";
 
-export const metadata: Metadata = {
-  title: "Services | Apollo Construction & Groundworks",
+export const metadata: Metadata = createPageMetadata({
+  title: "Services",
   description:
     "Explore groundworks, site development, driveways, paving, landscaping, fencing and outdoor construction services from Apollo Construction & Groundworks.",
-};
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (

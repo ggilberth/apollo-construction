@@ -12,12 +12,14 @@ import {
 } from "lucide-react";
 import { SectionTitle } from "@/components/section-title";
 import { imageBlurDataURL } from "@/config/images";
+import { createPageMetadata } from "@/config/seo";
 
-export const metadata: Metadata = {
-  title: "About | Apollo Construction & Groundworks",
+export const metadata: Metadata = createPageMetadata({
+  title: "About",
   description:
     "Learn about Apollo Construction & Groundworks, our team values, and our approach to safe, dependable construction.",
-};
+  path: "/about",
+});
 
 const values: readonly {
   title: string;
