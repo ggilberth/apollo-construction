@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
 
@@ -112,6 +113,18 @@ export function ContactForm({ formId }: ContactFormProps) {
         prefix="We couldn’t send your enquiry:"
         role="alert"
       />
+
+      <p className="text-sm leading-6 text-slate-600">
+        We use the information you submit to respond to your enquiry and
+        discuss your project. Read our{" "}
+        <Link
+          className="font-bold text-brand-800 underline decoration-brand-300 underline-offset-4 hover:text-brand-900"
+          href="/privacy"
+        >
+          privacy notice
+        </Link>
+        .
+      </p>
 
       <button
         className="inline-flex w-full items-center justify-center gap-2 rounded bg-brand-800 px-6 py-3.5 text-sm font-black uppercase tracking-wide text-white shadow-md transition hover:bg-brand-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"

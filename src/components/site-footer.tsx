@@ -81,7 +81,15 @@ export function SiteFooter() {
       <div className="border-t border-brand-700">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-5 text-xs text-brand-100 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {businessDetails.name}</p>
-          <p>Website by GH Digital</p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <Link
+              className="rounded-sm underline decoration-brand-700 underline-offset-4 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              href="/privacy"
+            >
+              Privacy notice
+            </Link>
+            <p>Website by GH Digital</p>
+          </div>
         </div>
       </div>
     </footer>
