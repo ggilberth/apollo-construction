@@ -19,34 +19,33 @@ export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const linkClassName = (isActive: boolean) =>
-    `rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-900 ${
-      isActive ? "text-accent-gold" : "hover:text-brand-100"
+    `rounded-sm border-b-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2 ${
+      isActive
+        ? "border-accent-gold text-brand-900"
+        : "border-transparent hover:text-brand-700"
     }`;
 
   return (
-    <header className="border-b border-white/10 bg-brand-900/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <header className="border-b border-brand-100 bg-white/95 shadow-sm backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         <Link
           aria-label="Apollo Construction & Groundworks Ltd home"
           href="/"
-          className="flex items-center gap-3 rounded-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-900"
+          className="rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2"
         >
           <Image
             alt=""
-            className="h-auto w-28 object-contain sm:w-32"
-            height={73}
+            className="h-auto w-40 object-contain sm:w-44"
+            height={260}
             priority
-            src="/apollo-wordmark-white.png"
-            width={240}
+            src="/apollo-wordmark-blue.png"
+            width={891}
           />
-          <span className="hidden text-base font-black uppercase tracking-wide sm:inline lg:text-lg">
-            Construction &amp; Groundworks Ltd
-          </span>
         </Link>
 
         <nav
           aria-label="Primary navigation"
-          className="hidden items-center gap-5 text-sm font-semibold uppercase tracking-wide text-slate-200 lg:flex"
+          className="hidden items-center gap-5 text-sm font-semibold uppercase tracking-wide text-brand-900 lg:flex"
         >
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
@@ -67,7 +66,7 @@ export function SiteHeader() {
           aria-controls="mobile-navigation"
           aria-expanded={isMenuOpen}
           aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-          className="rounded p-2 text-white hover:bg-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-900 lg:hidden"
+          className="rounded p-2 text-brand-900 hover:bg-brand-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2 lg:hidden"
           onClick={() => setIsMenuOpen((open) => !open)}
           type="button"
         >
@@ -78,7 +77,7 @@ export function SiteHeader() {
       {isMenuOpen ? (
         <nav
           aria-label="Mobile navigation"
-          className="border-t border-white/10 px-6 py-4 text-sm font-semibold uppercase tracking-wide text-slate-200 lg:hidden"
+          className="border-t border-brand-100 px-6 py-4 text-sm font-semibold uppercase tracking-wide text-brand-900 lg:hidden"
           id="mobile-navigation"
         >
           <div className="mx-auto flex max-w-6xl flex-col gap-1">
