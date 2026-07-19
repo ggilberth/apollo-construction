@@ -78,7 +78,7 @@ export function SiteHeader() {
       {isMenuOpen ? (
         <nav
           aria-label="Mobile navigation"
-          className="border-t border-brand-700 px-6 py-4 text-sm font-semibold uppercase tracking-wide text-slate-200 lg:hidden"
+          className="border-t border-white/10 px-6 py-4 text-sm font-semibold uppercase tracking-wide text-slate-200 lg:hidden"
           id="mobile-navigation"
         >
           <div className="mx-auto flex max-w-6xl flex-col gap-1">

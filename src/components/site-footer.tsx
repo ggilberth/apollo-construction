@@ -11,7 +11,7 @@ const footerLinks = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-brand-700 bg-brand-900 text-white">
+    <footer className="border-t border-white/10 bg-brand-900 text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-[1.5fr_0.75fr_1fr]">
         <div>
           <p className="flex items-center gap-2 text-lg font-black uppercase tracking-wide">
@@ -78,7 +78,7 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="border-t border-brand-700">
+      <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-5 text-xs text-brand-100 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {businessDetails.name}</p>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">

@@ -38,6 +38,13 @@ const serviceIcons: Record<string, LucideIcon> = {
   "fencing-outdoor-structures": Fence,
 };
 
+const serviceLinkLabels: Record<string, string> = {
+  "groundworks-site-development": "Explore groundworks",
+  "driveways-patios-paths": "Explore paving",
+  "landscaping-garden-transformations": "Explore landscaping",
+  "fencing-outdoor-structures": "Explore fencing",
+};
+
 const featuredProjects = projects.filter((_, index) =>
   [0, 4, 5].includes(index),
 );
@@ -85,12 +92,11 @@ export default function HomePage() {
           <div className="relative order-1 aspect-[2/1] overflow-hidden bg-slate-200 sm:aspect-[16/10] lg:order-2 lg:aspect-auto lg:min-h-[560px]">
             <Image
               alt="Completed new-build garden with a curved gravel path and landscaped lawn"
-              blurDataURL={imageBlurDataURL}
               className="object-cover"
+              fetchPriority="high"
               fill
-              placeholder="blur"
-              priority
-              quality={80}
+              loading="eager"
+              quality={70}
               sizes="(min-width: 1024px) 576px, 100vw"
               src="/projects/new-build-garden-makeover/new-build-garden-path-after.webp"
               style={{ objectPosition: "center 55%" }}
@@ -148,7 +154,7 @@ export default function HomePage() {
                   className="mt-5 inline-flex items-center gap-2 rounded-sm text-sm font-black uppercase tracking-wide text-brand-800 hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2"
                   href={`/services#${service.slug}`}
                 >
-                  Learn more
+                  {serviceLinkLabels[service.slug] ?? "Explore service"}
                   <ArrowRight aria-hidden="true" size={16} />
                 </Link>
               </article>
@@ -190,6 +196,7 @@ export default function HomePage() {
                     fill
                     blurDataURL={imageBlurDataURL}
                     placeholder="blur"
+                    quality={60}
                     sizes="(min-width: 768px) 33vw, 100vw"
                     src={project.cover.src}
                     style={{ objectPosition: project.cover.position }}
