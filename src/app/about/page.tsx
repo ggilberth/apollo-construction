@@ -17,7 +17,7 @@ import { createPageMetadata } from "@/config/seo";
 export const metadata: Metadata = createPageMetadata({
   title: "About",
   description:
-    "Learn about Apollo Construction & Groundworks, our team values, and our approach to safe, dependable construction.",
+    "Learn about Apollo Construction & Groundworks Ltd, our team values, and our approach to safe, dependable construction.",
   path: "/about",
 });
 
@@ -43,7 +43,7 @@ const values: readonly {
   },
   {
     title: "Flexibility",
-    copy: "Although we're based in and around Leicester, we're happy to travel to you and have completed projects much further afield.",
+    copy: "Although we're based in and around Market Bosworth, we're happy to travel to you and have completed projects much further afield.",
     icon: MapPin,
   },
 ];
@@ -56,7 +56,7 @@ export default function AboutPage() {
           as="h1"
           eyebrow="About us"
           title="A local construction partner built on trust."
-          description="Backed by over 17 years of industry experience, Apollo Construction & Groundworks helps homeowners and businesses complete projects with a reliable, practical approach."
+          description="Backed by over 17 years of industry experience, Apollo Construction & Groundworks Ltd helps homeowners and businesses complete projects with a reliable, practical approach."
         />
 
         <div className="grid overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm lg:grid-cols-[1.6fr_0.8fr]">

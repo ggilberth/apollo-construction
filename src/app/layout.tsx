@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     url: siteUrl.toString(),
     email: businessDetails.email,
     telephone: businessDetails.phone.href,
-    areaServed: ["Leicester", "The Midlands"],
+    areaServed: ["Market Bosworth", "The Midlands"],
     image: new URL("/opengraph-image", siteUrl).toString(),
   };
 

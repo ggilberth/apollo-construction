@@ -8,7 +8,7 @@ import { createPageMetadata } from "@/config/seo";
 export const metadata: Metadata = createPageMetadata({
   title: "Contact",
   description:
-    "Contact Apollo Construction & Groundworks to discuss groundworks, site development, landscaping or outdoor construction.",
+    "Contact Apollo Construction & Groundworks Ltd to discuss groundworks, site development, landscaping or outdoor construction.",
   path: "/contact",
 });
 

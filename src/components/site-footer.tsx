@@ -15,7 +15,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-[1.5fr_0.75fr_1fr]">
         <div>
           <p className="flex items-center gap-2 text-lg font-black uppercase tracking-wide">
-            Apollo Construction &amp; Groundworks
+            Apollo Construction &amp; Groundworks Ltd
             <PawPrint
               aria-hidden="true"
               className="shrink-0 text-accent-gold"

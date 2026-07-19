@@ -28,7 +28,7 @@ const trustSignals = [
   { label: "Over 17 years of industry experience", icon: CheckCircle2 },
   { label: "Clear scopes and project updates", icon: FileText },
   { label: "Realistic project scheduling", icon: Clock },
-  { label: "Leicester, the Midlands and beyond", icon: MapPin },
+  { label: "Market Bosworth, the Midlands and beyond", icon: MapPin },
 ];
 
 const serviceIcons: Record<string, LucideIcon> = {

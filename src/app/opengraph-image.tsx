@@ -53,7 +53,7 @@ export default function OpenGraphImage() {
             textTransform: "uppercase",
           }}
         >
-          Construction &amp; Groundworks
+          Construction &amp; Groundworks Ltd
         </div>
         <div
           style={{
@@ -76,7 +76,7 @@ export default function OpenGraphImage() {
             marginTop: "34px",
           }}
         >
-          Leicester, the Midlands and beyond
+          Market Bosworth, the Midlands and beyond
         </div>
       </div>
     </div>,

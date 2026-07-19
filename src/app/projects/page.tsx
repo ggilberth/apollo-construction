@@ -12,7 +12,7 @@ import { projects, type ProjectImage } from "@/data/projects";
 export const metadata: Metadata = createPageMetadata({
   title: "Projects",
   description:
-    "Explore completed landscaping, paving, groundworks, paths, pergolas and garden transformations by Apollo Construction & Groundworks.",
+    "Explore completed landscaping, paving, groundworks, paths, pergolas and garden transformations by Apollo Construction & Groundworks Ltd.",
   path: "/projects",
 });
 

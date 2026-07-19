@@ -27,7 +27,7 @@ export function SiteHeader() {
     <header className="border-b border-white/10 bg-brand-900/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link
-          aria-label="Apollo Construction & Groundworks home"
+          aria-label="Apollo Construction & Groundworks Ltd home"
           href="/"
           className="flex items-center gap-3 rounded-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-900"
         >
@@ -40,7 +40,7 @@ export function SiteHeader() {
             width={240}
           />
           <span className="hidden text-base font-black uppercase tracking-wide sm:inline lg:text-lg">
-            Construction &amp; Groundworks
+            Construction &amp; Groundworks Ltd
           </span>
         </Link>
 

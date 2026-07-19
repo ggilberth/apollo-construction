@@ -10,7 +10,7 @@ import { services } from "@/data/services";
 export const metadata: Metadata = createPageMetadata({
   title: "Services",
   description:
-    "Explore groundworks, site development, driveways, paving, landscaping, fencing and outdoor construction services from Apollo Construction & Groundworks.",
+    "Explore groundworks, site development, driveways, paving, landscaping, fencing and outdoor construction services from Apollo Construction & Groundworks Ltd.",
   path: "/services",
 });
 

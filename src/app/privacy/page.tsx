@@ -7,7 +7,7 @@ import { createPageMetadata } from "@/config/seo";
 export const metadata: Metadata = createPageMetadata({
   title: "Privacy notice",
   description:
-    "How Apollo Construction & Groundworks collects, uses and protects personal information submitted through this website.",
+    "How Apollo Construction & Groundworks Ltd collects, uses and protects personal information submitted through this website.",
   path: "/privacy",
 });
 

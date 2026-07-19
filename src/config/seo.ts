@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const siteName = "Apollo Construction & Groundworks";
+export const siteName = "Apollo Construction & Groundworks Ltd";
 export const siteDescription =
   "Groundworks, site development, landscaping, paving and outdoor construction services for residential and commercial projects.";
 

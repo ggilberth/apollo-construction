@@ -6,7 +6,7 @@ export const businessDetails = {
     href: "+447970283457",
   },
   serviceArea: {
-    full: "Based in Leicester, serving the Midlands and beyond, with travel considered for every project.",
-    short: "Leicester-based, working across the Midlands and beyond.",
+    full: "Based in Market Bosworth, serving the Midlands and beyond, with travel considered for every project.",
+    short: "Market Bosworth-based, working across the Midlands and beyond.",
   },
 } as const;
