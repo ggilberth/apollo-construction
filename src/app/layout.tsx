@@ -1,61 +1,79 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import { SiteFooter } from '@/components/site-footer';
-import { SiteHeader } from '@/components/site-header';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import type { Metadata } from "next";
+import Script from "next/script";
+import "./globals.css";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { businessDetails } from "@/config/business";
+import {
+  allowIndexing,
+  createPageMetadata,
+  siteDescription,
+  siteName,
+  siteUrl,
+} from "@/config/seo";
 
 export const metadata: Metadata = {
-  title: 'Apollo Construction & Groundworks',
-  description:
-    'Reliable construction and renovation experts for residential and light commercial projects.',
-  manifest: '/manifest.webmanifest',
+  ...createPageMetadata({ description: siteDescription, path: "/" }),
+  metadataBase: siteUrl,
+  title: {
+    default: siteName,
+    template: `%s | ${siteName}`,
+  },
+  manifest: "/manifest.webmanifest",
+  robots: allowIndexing
+    ? { index: true, follow: true }
+    : { index: false, follow: false, noarchive: true },
   icons: {
     icon: [
-      { url: '/icon-16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: [{ url: '/icon-180.png', sizes: '180x180', type: 'image/png' }],
+    apple: [
+      { url: "/icon-180.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'GeneralContractor',
-  name: 'Apollo Construction & Groundworks',
-  url: 'https://www.apolloconstruction.co.uk',
-  telephone: 'YOUR_PHONE_NUMBER',
-  description:
-    'Professional groundworks, drainage, foundations, patios and driveways in midlands and surrounding areas.',
-  areaServed: ['Leicestershire', 'Midlands'],
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: '',
-    addressRegion: 'Leicestershire',
-    addressCountry: 'GB',
-  },
-  sameAs: [
-    // Add social profile URLs here if available
-  ],
-};
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const googleAnalyticsId = process.env.NEXT_PUBLIC_GA_ID;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    name: businessDetails.name,
+    description: siteDescription,
+    url: siteUrl.toString(),
+    email: businessDetails.email,
+    telephone: businessDetails.phone.href,
+    areaServed: ["Market Bosworth", "The Midlands"],
+    image: new URL("/opengraph-image", siteUrl).toString(),
+  };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen">
+      <body className="flex min-h-screen flex-col">
         <script
-          type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData),
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
           }}
+          type="application/ld+json"
         />
-        {process.env.NEXT_PUBLIC_GA_ID && (
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
-        )}
+        {googleAnalyticsId ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${googleAnalyticsId}');`}
+            </Script>
+          </>
+        ) : null}
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

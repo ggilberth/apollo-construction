@@ -1,39 +1,113 @@
 import type { Metadata } from "next";
+import { Mail, MapPin, MessageSquareText, Phone, PhoneCall } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { SectionTitle } from "@/components/section-title";
-import { todo } from "node:test";
+import { businessDetails } from "@/config/business";
+import { createPageMetadata } from "@/config/seo";
 
-export const metadata: Metadata = {
-  title: "Contact | Apollo Construction & Groundworks",
-  description: "Contact Apollo Construction & Groundworks to discuss your next construction or renovation project."
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Contact",
+  description:
+    "Contact Apollo Construction & Groundworks Ltd to discuss groundworks, site development, landscaping or outdoor construction.",
+  path: "/contact",
+});
 
-//@todo: add contact details here
 export default function ContactPage() {
+  const formId = process.env.FORMSPREE_FORM_ID;
+
   return (
-    <section className="mx-auto max-w-6xl bg-slate-50 px-6 py-16">
-      <SectionTitle
-        eyebrow="Contact"
-        title="Request a call back"
-        description="Tell us what you are building, your timeline, and your priorities. We will follow up with a detailed estimate."
-      />
-      <div className="grid gap-8 md:grid-cols-2">
-        <div className="rounded border border-brand-100 bg-white p-6 shadow-sm">
-          <h3 className="text-xl font-bold text-slate-900">Contact details</h3>
-          <div className="mt-4 space-y-3 text-slate-600">
-            <p>
-              <strong>Phone:</strong> (555) 236-9184
-            </p>
-            <p>
-              <strong>Email:</strong> hello@apolloconstruction.example
-            </p>
-            <p>
-              <strong>Service area:</strong> Midlands and beyond
-            </p>
+    <div className="bg-slate-50">
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <SectionTitle
+          as="h1"
+          eyebrow="Contact"
+          title="Request a call back"
+          description="Tell us what you are building, your timeline and your priorities, and we’ll get in touch."
+        />
+        <div className="grid items-start gap-8 md:grid-cols-2">
+          <div className="space-y-6">
+            <div className="rounded-xl border border-brand-100 bg-white p-6 shadow-sm">
+              <h2 className="text-xl font-black text-slate-950">
+                Contact details
+              </h2>
+              <div className="mt-5 space-y-5">
+                <a
+                  className="group flex items-start gap-4 rounded-lg p-2 transition hover:bg-brand-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700"
+                  href={`tel:${businessDetails.phone.href}`}
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-800 group-hover:bg-white">
+                    <Phone aria-hidden="true" size={20} />
+                  </span>
+                  <span>
+                    <span className="block text-xs font-black uppercase tracking-[0.16em] text-slate-600">
+                      Call
+                    </span>
+                    <span className="mt-1 block font-bold text-brand-800">
+                      {businessDetails.phone.display}
+                    </span>
+                  </span>
+                </a>
+                <a
+                  className="group flex items-start gap-4 rounded-lg p-2 transition hover:bg-brand-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700"
+                  href={`mailto:${businessDetails.email}`}
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-800 group-hover:bg-white">
+                    <Mail aria-hidden="true" size={20} />
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-xs font-black uppercase tracking-[0.16em] text-slate-600">
+                      Email
+                    </span>
+                    <span className="mt-1 block break-all font-bold text-brand-800">
+                      {businessDetails.email}
+                    </span>
+                  </span>
+                </a>
+                <div className="flex items-start gap-4 p-2">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-800">
+                    <MapPin aria-hidden="true" size={20} />
+                  </span>
+                  <span>
+                    <span className="block text-xs font-black uppercase tracking-[0.16em] text-slate-600">
+                      Service area
+                    </span>
+                    <span className="mt-1 block leading-6 text-slate-700">
+                      {businessDetails.serviceArea.full}
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-xl bg-brand-900 p-6 text-white shadow-sm">
+              <h2 className="text-xl font-black">What happens next?</h2>
+              <ol className="mt-5 space-y-4 text-sm text-brand-100">
+                <li className="flex items-center gap-3">
+                  <MessageSquareText aria-hidden="true" size={20} />
+                  <span>Send us a few details about the project.</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <PhoneCall aria-hidden="true" size={20} />
+                  <span>We’ll get in touch to discuss what you need.</span>
+                </li>
+              </ol>
+            </div>
           </div>
+          {formId ? (
+            <ContactForm formId={formId} />
+          ) : (
+            <div
+              className="rounded border border-amber-300 bg-amber-50 p-6 text-amber-950 shadow-sm"
+              role="status"
+            >
+              <h2 className="text-xl font-bold">Contact form unavailable</h2>
+              <p className="mt-2 leading-6">
+                Please call or email us using the contact details on this page.
+              </p>
+            </div>
+          )}
         </div>
-        <ContactForm />
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

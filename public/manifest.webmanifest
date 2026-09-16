@@ -1,11 +1,11 @@
 {
-  "name": "Apollo Construction & Groundworks",
+  "name": "Apollo Construction & Groundworks Ltd",
   "short_name": "Apollo",
-  "description": "Reliable construction and renovation experts for residential and light commercial projects.",
+  "description": "Groundworks, site development, landscaping, paving and outdoor construction services.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
+  "background_color": "#0A2348",
+  "theme_color": "#0A2348",
   "icons": [
     {
       "src": "/icon-192.png",
